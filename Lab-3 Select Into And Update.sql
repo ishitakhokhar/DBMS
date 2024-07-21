@@ -1,8 +1,8 @@
 --PART-A
 CREATE TABLE CRICKET
 (
-	NAME	VARCHAR(50),
-	CITY	VARCHAR(20),
+	NAME		VARCHAR(50),
+	CITY		VARCHAR(20),
 	AGE		INT
 )
 INSERT INTO CRICKET VALUES
@@ -24,8 +24,8 @@ SELECT * INTO IPL FROM CRICKET WHERE 1=0
 --PART-B
 CREATE TABLE EMPLOYEE
 (
-	NAME	VARCHAR(50),
-	CITY	VARCHAR(50),
+	NAME		VARCHAR(50),
+	CITY		VARCHAR(50),
 	AGE		INT
 )
 INSERT INTO EMPLOYEE VALUES
@@ -89,7 +89,12 @@ UPDATE DEPOSIT SET ADATE='1996-04-01'WHERE CNAME='PRAMOD'
 --1 
 --Give 10% Increment in Loan Amount. (Use Borrow Table)
 UPDATE BORROW SET AMOUNT=(AMOUNT+AMOUNT*0.1)
---2 --Customer deposits additional 20% amount to their account, update the same. (Use Deposit Table)UPDATE DEPOSIT SET AMOUNT=(AMOUNT+AMOUNT*0.2)--PART-C--1
+--2 
+--Customer deposits additional 20% amount to their account, update the same. (Use Deposit Table)
+UPDATE DEPOSIT SET AMOUNT=(AMOUNT+AMOUNT*0.2)
+
+--PART-C
+--1
 --Update amount of loan no 321 to NULL. (Use Borrow Table)
 UPDATE BORROW SET LOANNO=NULL WHERE LOANNO=321
 --2
@@ -110,6 +115,6 @@ UPDATE BORROW SET LOANNO=5000,BNAME='VRCE',CNAME='DARSHAN' WHERE LOANNO=481
 --than 2000.
 UPDATE DEPOSIT SET ADATE='2021-01-01' WHERE AMOUNT < 2000
 --7
---Update the Deposit table and set the date to NULL & Branch name to ‘ANDHERI whose Account No is
+--Update the Deposit table and set the date to NULL & Branch name to â€˜ANDHERI whose Account No is
 --110
 UPDATE DEPOSIT SET ADATE=NULL, BNAME='ANDHERI' WHERE ACTNO = 110
