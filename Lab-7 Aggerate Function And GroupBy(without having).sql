@@ -1,7 +1,7 @@
 --PART-A
 CREATE TABLE EMP
 (
-	EID			INT,
+	EID		INT,
 	ENAME		VARCHAR(20),
 	DEPARTMENT	VARCHAR(20),
 	SALARY		DECIMAL(8,2),
@@ -91,5 +91,5 @@ SELECT COUNT(ENAME) FROM EMP WHERE JOININGDATE='1-JAN-1991' OR DEPARTMENT='IT'
 --Find the Joining Date wise Total Salaries.
 SELECT JOININGDATE, SUM(SALARY) FROM EMP GROUP BY JOININGDATE
 --4
---Find the Maximum salary department & city wise in which city name starts with ‘R’.
+--Find the Maximum salary department & city wise in which city name starts with â€˜Râ€™.
 SELECT DEPARTMENT,CITY ,MAX(SALARY) FROM EMP WHERE CITY LIKE 'R%' GROUP BY DEPARTMENT,CITY
