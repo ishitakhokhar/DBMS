@@ -81,7 +81,12 @@ SELECT FLOOR(55.2),FLOOR(35.7),FLOOR(-55.2)
 --4
 -- Find out remainder of 55 divided 2 and 55 divided by 3.
 SELECT 55%2,55%3
---5-- Find out value of 23 raised to 2nd power and 14 raised 3rd power.SELECT POWER(23,2),POWER(14,3)--PART-C--1
+--5
+-- Find out value of 23 raised to 2nd power and 14 raised 3rd power.
+SELECT POWER(23,2),POWER(14,3)
+
+--PART-C
+--1
 --Find out the square root of 36, 49 and 81.
 SELECT SQRT(36),SQRT(49),SQRT(81)
 --2
@@ -93,8 +98,15 @@ SELECT ROUND(280.8952,2),ROUND(280.8952,0),ROUND(280.8952,-2)
 --4
 --Find sine, cosine and tangent of 4.2014.
 SELECT SIN(4.2014),COS(4.2014),TAN(4.2014)
---5--Find sign of -55, 0 and 95.SELECT SIGN(-55),SIGN(0),SIGN(95)--STRING FUNCTIONS--PART-1--1
---Find the length of following. (I) NULL (II) ë hello í (III) Blank
+--5
+--Find sign of -55, 0 and 95.
+SELECT SIGN(-55),SIGN(0),SIGN(95)
+
+
+--STRING FUNCTIONS
+--PART-1
+--1
+--Find the length of following. (I) NULL (II) ‚Äò hello ‚Äô (III) Blank
 SELECT LEN(NULL),LEN(' HELLO '),LEN('BLANK')
 --2
 --Display your name in lower & upper case.
@@ -106,26 +118,26 @@ SELECT LEFT('DARSHAN',3)
 --Display 3rd to 10th character of your name.
 SELECT SUBSTRING('DARSHAN',3,7)
 --5
---Write a query to convert ëabc123efgí to ëabcXYZefgí & ëabcabcabcí to ëab5ab5ab5í using REPLACE.
+--Write a query to convert ‚Äòabc123efg‚Äô to ‚ÄòabcXYZefg‚Äô & ‚Äòabcabcabc‚Äô to ‚Äòab5ab5ab5‚Äô using REPLACE.
 SELECT REPLACE('ABC123EFG','123','XYZ')
 SELECT REPLACE('ABCABCABC','C',5)
 --6
---Write a query to display ASCII code for ëaí,íAí,ízí,íZí, 0, 9.
+--Write a query to display ASCII code for ‚Äòa‚Äô,‚ÄôA‚Äô,‚Äôz‚Äô,‚ÄôZ‚Äô, 0, 9.
 SELECT ASCII('a'),ASCII('A'),ASCII('z'),ASCII('Z'),ASCII(0),ASCII(9)
 --7
 --Write a query to display character based on number 97, 65,122,90,48,57.
 SELECT CHAR(97),CHAR(65),CHAR(122),CHAR(90),CHAR(48),CHAR(57)
 --8
---Write a query to remove spaces from left of a given string ëhello world ë
+--Write a query to remove spaces from left of a given string ‚Äòhello world ‚Äò
 SELECT LTRIM('HELLO WORLD ')
 --9
---Write a query to remove spaces from right of a given string ë hello world ë.
+--Write a query to remove spaces from right of a given string ‚Äò hello world ‚Äò.
 SELECT RTRIM(' HELLO WORLD ')
 --10
---Write a query to display first 4 & Last 5 characters of ëSQL Serverí.
+--Write a query to display first 4 & Last 5 characters of ‚ÄòSQL Server‚Äô.
 SELECT LEFT('SQL SERVER',4),RIGHT('SQL SERVER',5)
 --11
---Write a query to convert a string ë1234.56í to number (Use cast and convert function).
+--Write a query to convert a string ‚Äò1234.56‚Äô to number (Use cast and convert function).
 SELECT CAST('1234.56' AS INT)
 SELECT CONVERT(INT,'1234.56')
 --12
@@ -140,7 +152,7 @@ SELECT SPACE(10)+'DARSHAN'
 SELECT CONCAT('DARSHAN','UNIVERSITY')
 SELECT ('DARSHAN'+'UNIVERSITY')
 --15
---Find reverse of ìDarshanî.
+--Find reverse of ‚ÄúDarshan‚Äù.
 SELECT REVERSE('DARSHAN')
 --16
 --Repeat your name 3 times.
@@ -159,7 +171,12 @@ SELECT LEFT(FIRSTNAME,3) FROM STUDENT
 --4
 --Display 3rd to 10th character of Website column.
 SELECT SUBSTRING(WEBSITE,3,7) FROM STUDENT
---5--Write a query to display first 4 & Last 5 characters of Website column.SELECT LEFT(WEBSITE,3),RIGHT(WEBSITE,5) FROM STUDENT--PART-C --Perform following queries on Student table of practical no 5.
+--5
+--Write a query to display first 4 & Last 5 characters of Website column.
+SELECT LEFT(WEBSITE,3),RIGHT(WEBSITE,5) FROM STUDENT
+
+--PART-C
+ --Perform following queries on Student table of practical no 5.
 --1
 --Put 10 space before FirstName using function.
 SELECT SPACE(10)+FIRSTNAME FROM STUDENT
@@ -183,7 +200,13 @@ SELECT FIRSTNAME FROM STUDENT WHERE LEN(FIRSTNAME)=5
 --7
 --Combine the result as <FirstName> Lives in <City>.
 SELECT CONCAT(FIRSTNAME,' LIVES IN ',CITY)AS RESULT FROM STUDENT
---8--Combine the result as Student_ID of < FirstName > is <StuID>.SELECT CONCAT('STUDENT_ID ',FIRSTNAME,' IS ',STUID)AS RESULT FROM STUDENT--DATE FUNCTIONS--PART-A--1
+--8
+--Combine the result as Student_ID of < FirstName > is <StuID>.
+SELECT CONCAT('STUDENT_ID ',FIRSTNAME,' IS ',STUID)AS RESULT FROM STUDENT
+
+--DATE FUNCTIONS
+--PART-A
+--1
 --Write a query to display the current date & time. Label the column Today_Date.
 SELECT GETDATE()AS TODAY_DATE
 --2
@@ -225,7 +248,28 @@ SELECT DATEPART(MONTH,GETDATE()) AS MONTHNAME
 --13
 --Write a query to find out last date of current month.
 SELECT EOMONTH(GETDATE())
---14--Calculate your age in years and months.SELECT DATEDIFF(YEAR,'2003-5-12',GETDATE()) AS AGEYEAR,DATEDIFF(MONTH,'2003-5-12',GETDATE())%12 AS AGEMONTH--PART-BCREATE TABLE EMP_DETAIL(	EMPNO	INT,	EMPNAME	VARCHAR(20),	JOININGDATE	DATETIME,	SALARY	DECIMAL(8,2),	CITY	VARCHAR(20))INSERT INTO EMP_DETAIL VALUES(101,'KEYUR','2002-01-15',1200,'RAJKOT')INSERT INTO EMP_DETAIL VALUES(102,'Hardik','2004-02-15',1400,'Ahmedabad')INSERT INTO EMP_DETAIL VALUES(103,'Kajal','2006-03-14',1500,'Baroda')INSERT INTO EMP_DETAIL VALUES(104,'Bhoomi','2005-06-23',1250,'Ahmedabad')INSERT INTO EMP_DETAIL VALUES(105,'Harmit','2004-02-15',1400,'RAJKOT')INSERT INTO EMP_DETAIL VALUES(106,'Jay','2007-03-12',1200,'Surat')SELECT * FROM EMP_DETAIL
+--14
+--Calculate your age in years and months.
+SELECT DATEDIFF(YEAR,'2003-5-12',GETDATE()) AS AGEYEAR,DATEDIFF(MONTH,'2003-5-12',GETDATE())%12 AS AGEMONTH
+
+--PART-B
+CREATE TABLE EMP_DETAIL
+(
+	EMPNO	INT,
+	EMPNAME	VARCHAR(20),
+	JOININGDATE	DATETIME,
+	SALARY	DECIMAL(8,2),
+	CITY	VARCHAR(20)
+)
+INSERT INTO EMP_DETAIL VALUES(101,'KEYUR','2002-01-15',1200,'RAJKOT')
+INSERT INTO EMP_DETAIL VALUES(102,'Hardik','2004-02-15',1400,'Ahmedabad')
+INSERT INTO EMP_DETAIL VALUES(103,'Kajal','2006-03-14',1500,'Baroda')
+INSERT INTO EMP_DETAIL VALUES(104,'Bhoomi','2005-06-23',1250,'Ahmedabad')
+INSERT INTO EMP_DETAIL VALUES(105,'Harmit','2004-02-15',1400,'RAJKOT')
+INSERT INTO EMP_DETAIL VALUES(106,'Jay','2007-03-12',1200,'Surat')
+SELECT * FROM EMP_DETAIL
+
+
 --1
 --Write a query to find new date after 365 day with reference to JoiningDate.
 SELECT DATEADD(DAY,365,JOININGDATE) AS NEWDATE FROM EMP_DETAIL
@@ -241,7 +285,12 @@ SELECT FORMAT(JOININGDATE,'MMM dd, yy') AS NEWDATE FROM EMP_DETAIL
 --5
 --Write a query to find out total number of months between JoiningDate and 31-Mar-09.
 SELECT DATEDIFF(MONTH,JOININGDATE,'2009-03-31') AS TOTALMONTH FROM EMP_DETAIL
---6--Write a query to find out total number of years between JoiningDate and 14-Sep-10.SELECT DATEDIFF(YEAR,JOININGDATE,'2010-09-14') AS TOTALYEAR FROM EMP_DETAIL--PART-C--1
+--6
+--Write a query to find out total number of years between JoiningDate and 14-Sep-10.
+SELECT DATEDIFF(YEAR,JOININGDATE,'2010-09-14') AS TOTALYEAR FROM EMP_DETAIL
+
+--PART-C
+--1
 --Write a query to extract Day, Month, Year from JoiningDate.
 SELECT DAY(JOININGDATE) FROM EMP_DETAIL
 SELECT MONTH(JOININGDATE) FROM EMP_DETAIL
@@ -256,4 +305,6 @@ SELECT DATEADD(MONTH,-2,JOININGDATE) FROM EMP_DETAIL
 --Extract month from JoiningDate using datename () and datepart () function.
 SELECT DATENAME(MONTH,JOININGDATE) FROM EMP_DETAIL
 SELECT DATEPART(MONTH,JOININGDATE) FROM EMP_DETAIL
---5--Calculate your age in years and monthsSELECT DATEDIFF(YEAR,'2003-5-12',GETDATE()) AS AGEYEAR,DATEDIFF(MONTH,'2003-5-12',GETDATE())%12 AS AGEMONTH
+--5
+--Calculate your age in years and months
+SELECT DATEDIFF(YEAR,'2003-5-12',GETDATE()) AS AGEYEAR,DATEDIFF(MONTH,'2003-5-12',GETDATE())%12 AS AGEMONTH
